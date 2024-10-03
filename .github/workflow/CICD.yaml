@@ -29,6 +29,13 @@
       - name: Grant execute permissions for gardel
         run: chmod +x gradelew
 
+      - name : build with gradel 
+        run : ./gradelew build
+
+    publish :
+
+      needs: build 
+
 
 
     
