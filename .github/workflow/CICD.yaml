@@ -1,0 +1,35 @@
+# Its nana project for git hub action - https://www.youtube.com/watch?v=R8_veQiYBjI
+
+# project github link from nana - https://github.com/nanuchi/my-project
+
+-name : javaci with gradel 
+
+  on :
+    pull_request : 
+      branches : [master]
+    push_request :
+      branches : [master]
+
+  jobs:
+    
+    build:
+      
+      runs-on : ubuntu-latest
+
+      steps:
+  
+      - name : checking out the code
+        uses : actions/checkout@v2
+
+      - name : setup up JDK 1.8 
+        uses : actions/setup-jdk@v1
+        with:
+          java-versions: 1.8 
+
+      - name: Grant execute permissions for gardel
+        run: chmod +x gradelew
+
+
+
+    
+
