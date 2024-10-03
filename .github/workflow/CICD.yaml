@@ -32,6 +32,22 @@
       - name : build with gradel 
         run : ./gradelew build
 
+      - name : build and push the docker image
+        run : 
+          docker login cred
+
+      - name : build and push docker image to docker registry 
+        uses : actions/build-docker-image@1.0
+        with :
+          image : docker file will be there in the root directory of the code itself. Ubuntu has preinstalled docker. 
+          registry : my own docker hub repository where image need to be pushed. 
+          username: ${{secrets.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
+
+
+          
+
+
     publish :
 
       needs: build 
