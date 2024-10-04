@@ -53,7 +53,7 @@
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
 
-    publish :
+    publish : 
 
       needs: build 
 
