@@ -32,6 +32,15 @@
       - name : build with gradel 
         run : ./gradelew build
 
+      - name : build with maven ( maven and gradel me jdk env hi setup krna hota hai)
+        run : mvn clean install 
+
+      - name : setup python env
+        uses : action/setup-python@
+          with:
+            java-versions: 1.8 
+        
+      
       - name : build and push the docker image
         run : 
           docker login cred
@@ -43,10 +52,6 @@
           registry : my own docker hub repository where image need to be pushed. 
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
-
-
-          
-
 
     publish :
 
